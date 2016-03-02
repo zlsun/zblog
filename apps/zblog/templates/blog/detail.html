@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ entry.title }}{% endblock %}
+
+{% block content %}
+
+<div class="entry-header">
+    <h2 class="entry-title">
+        {{ entry.title }}
+    </h2>
+    <div class="entry-meta">
+        <span class="fa fa-clock-o"></span>
+        <span class="entry-info">
+            <a href="{% url 'archives' %}">
+                {{ entry.get_date|date:"Y年m月d日" }}
+            </a>
+        </span>
+        {% if entry.category %}
+            <span class="fa fa-folder-open"></span>
+            <span class="entry-info">
+                <span class="entry-category">
+                    <a href="{% url 'category' category_name=entry.category %}">
+                        {{ entry.category }}
+                    </a>
+                </span>
+            </span>
+        {% endif %}
+        {% if entry.tags.count %}
+            <span class="fa fa-tags"></span>
+            <span class="entry-info">
+                {% for t in entry.tags.all %}
+                    <span class="entry-tag">
+                        <a href="{% url 'tag' tag_name=t.name %}">
+                            {{ t.name }}
+                        </a>
+                    </span>
+                {% endfor %}
+            </span>
+        {% endif %}
+    </div>
+</div>
+{% load markdown_deux_tags %}
+<div class="entry-content">
+    {{ entry.content|markdown }}
+</div>
+<div class="comments">
+    {# {% load disqus_tags %}#}
+    {# {% disqus_show_comments %}#}
+    {% load duoshuo_tags %}
+    {% duoshuo_comments %}
+</div>
+{% endblock %}

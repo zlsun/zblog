@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "node_modules/normalize.css/normalize.css" %}"/>
+    <link rel="stylesheet" href="{% static "node_modules/font-awesome/css/font-awesome.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "blog/css/blog.css" %}"/>
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="site-title">
+                <a href="{% url "index" %}">{{ blog.title }}: {{ blog.subtitle }}</a>
+            </h1>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="footer">
+            <div class="site-info">
+                Copyright &copy; zlsun 2014 | Powered by zblog
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for entry in entries %}
+        <div class="entry">
+            <div class="entry-header">
+                <h2 class="entry-title">
+                    <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+                </h2>
+            </div>
+            <div class="entry-digest">
+                {{ entry.digest }}
+            </div>
+        </div>
+    {% endfor %}
+    {% block list_footer %} {% endblock %}
+{% endblock %}

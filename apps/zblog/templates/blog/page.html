@@ -1,0 +1,18 @@
+{% extends 'blog/base_list.html' %}
+
+{% block title %}{{ blog.title }}: {{ blog.subtitle }}{% endblock %}
+
+{% block list_footer %}
+    <div class="page_btns clearfix">
+        {% if entries.has_next %}
+            <div class="btn" id="older_btn">
+                <a href="{% url 'page' page_num=entries.next_page_number %}">← Older</a>
+            </div>
+        {% endif %}
+        {% if entries.has_previous %}
+            <div class="btn" id="newer_btn">
+                <a href="{% url 'page' page_num=entries.previous_page_number %}">Newer→</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
