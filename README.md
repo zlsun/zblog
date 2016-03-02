@@ -44,6 +44,28 @@ A simple blog developed with Django.
 
 6. Open `http://127.0.0.1/zblog` in browser to visit the blog.
 
+## Screenshots
+
+<table>
+    <tr>
+        <td width="30%">
+            <a href="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/1.png">
+                <img src="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/1.png" width="100%">
+            </a>
+        </td>
+        <td width="30%">
+            <a href="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/2.png">
+                <img src="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/2.png" width="100%">
+            </a>
+        </td>
+        <td width="30%">
+            <a href="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/3.png">
+                <img src="https://raw.githubusercontent.com/zlsun/screenshots/master/zblog/3.png" width="100%">
+            </a>
+        </td>
+    <tr>
+</table>
+
 ## License
 
 [MIT License](LICENSE)
